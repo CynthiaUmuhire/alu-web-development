@@ -1,5 +1,7 @@
  body {
-    display: flex;xcxc
+    display: flex;
+    background-color: bisque;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
  }
  main {
     flex-direction: row;
@@ -7,6 +9,7 @@
  }
  article {
     flex:2;
+    
     overflow: auto;
  }
  aside {
