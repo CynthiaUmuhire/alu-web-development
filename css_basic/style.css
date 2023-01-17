@@ -1,0 +1,15 @@
+ body {
+    display: flex;xcxc
+ }
+ main {
+    flex-direction: row;
+    flex: auto;
+ }
+ article {
+    flex:2;
+    overflow: auto;
+ }
+ aside {
+    flex:1;
+    overflow: auto;
+ }
