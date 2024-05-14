@@ -3,7 +3,7 @@
 """
 
 
-class BaseCaching():
+class BasicCache():
     """ BaseCaching defines:
       - constants of your caching system
       - where your data are stored (in a dictionary)
@@ -39,3 +39,6 @@ class BaseCaching():
         """ Get an item by key
         """
         return self.cache_data.get(key)
+
+
+
