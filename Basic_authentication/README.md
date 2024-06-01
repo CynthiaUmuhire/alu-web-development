@@ -1,1 +1,1 @@
-Basic authentication with python
+Sessionauthentication with python
