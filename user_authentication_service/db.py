@@ -38,7 +38,7 @@ class DB:
         for key in kwargs:
             if not hasattr(User, key):
                 raise InvalidRequestError
-        results = self._session.query(User).filter_by(**kwargs).first()
+        results = self._session.query(User).filter_by(**kwargs).one()
         if not results:
             raise NoResultFound
 
