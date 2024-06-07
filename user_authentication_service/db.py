@@ -35,7 +35,9 @@ class DB:
         """ find user by email """
         if not kwargs:
             raise InvalidRequestError
-
+        for key in kwargs:
+            if not hasattr(User, key):
+                raise InvalidRequestError
         results = self._session.query(User).filter_by(**kwargs).first()
         if not results:
             raise NoResultFound
