@@ -32,14 +32,20 @@ class DB:
         return user
 
     def find_user_by(self, **kwargs) -> User:
-        """ find user by email """
+        """ find users"""
         if not kwargs:
             raise InvalidRequestError
         for key in kwargs:
             if not hasattr(User, key):
                 raise InvalidRequestError
-        results = self._session.query(User).filter_by(**kwargs).one()
-        if not results:
-            raise NoResultFound
+        return self._session.query(User).filter_by(**kwargs).one()
 
-        return results
+    def update_user(self, user_id: int, **kwargs) -> None:
+        """ update a user """
+        user = self.find_user_by(id=user_id)
+        for key, value in kwargs.items():
+            if not hasattr(user, key):
+                raise ValueError
+            setattr(user, key, value)
+        self._session.commit()
+        return None
